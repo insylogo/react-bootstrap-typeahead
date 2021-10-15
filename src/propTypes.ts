@@ -95,10 +95,7 @@ export function highlightOnlyResultType({
   allowNew,
   highlightOnlyResult,
 }: Props) {
-  warn(
-    !(highlightOnlyResult && allowNew),
-    '`highlightOnlyResult` will not work with `allowNew`.'
-  );
+  return;
 }
 
 export function ignoreDiacriticsType(props: Props) {

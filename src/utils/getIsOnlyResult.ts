@@ -11,11 +11,11 @@ interface Props {
 function getIsOnlyResult(props: Props): boolean {
   const { allowNew, highlightOnlyResult, results } = props;
 
-  if (!highlightOnlyResult || allowNew) {
+  if (!highlightOnlyResult) {
     return false;
   }
 
-  return results.length === 1 && !getOptionProperty(results[0], 'disabled');
+  return (results.length === 1 || (results.length === 2 && allowNew)) && !getOptionProperty(results[0], 'disabled');
 }
 
 export default getIsOnlyResult;
